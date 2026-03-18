@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Set your data
+host="vpn-gateway"
+port="443"
+user="user"
+password="passowrd"
+
+cert="$(echo | openssl s_client -connect $host:$port 2>/dev/null | \
+  openssl x509 -outform der | \
+  sha256sum | \
+  awk '{ print $1 }')"
+
+# Start openfortisslvpn with set parameters at the backround.
+# Used for CI/CD
+sudo openfortivpn $host:$port -u $user -p $password --trusted-cert=$cert > /tmp/vpn-output.log 2>&1 & sleep 5
+
+# Kill the process
+# kill $(ps -e | grep openfortivpn | awk '{print $1}'); sleep 2;
+
+# Read logs in file /tmp/vpn-output.log
+
