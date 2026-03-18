@@ -1,4 +1,4 @@
-# Shosrtcut scripts to connect to office fortivpn
+# Shortcut scripts to connect to office fortivpn
 
 Connect to Fortinet VPN using openfortivpn on background
 
