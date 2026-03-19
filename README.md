@@ -1,6 +1,6 @@
 # Shortcut scripts to connect to office fortivpn
 
-Connect to Fortinet VPN using openfortivpn on background
+Connect to Fortinet VPN using openfortivpn on background and automatically submit server cert (unsafe but automated).
 
 ## Requirements:
 - ``` openfortivpn ``` installed
